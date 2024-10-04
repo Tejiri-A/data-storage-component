@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap");
+
 :root {
   /* colors */
   --color-pale-blue: hsl(243, 100%, 93%);
@@ -7,9 +9,9 @@
   --gradient-primary: hsl(6, 100%, 80%), (335, 100%, 65%);
 
   /* typography */
-  --ff-primary: ;
+  --ff-primary: "Raleway", system-ui;
   --fw-400: 400;
-  --ff-700: 700;
+  --fw-700: 700;
 
   /* base font size - applied at body / html level */
   --fs-base: 1rem;
@@ -55,6 +57,15 @@ html {
 body {
   min-height: 100vh;
   line-height: 1.5;
+  background: url(./images/bg-mobile.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: var(--ff-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -98,12 +109,184 @@ select {
   font-size: inherit;
 }
 
+li {
+  list-style: none;
+}
+
+/* main */
+main {
+  width: min(85vw, 920px);
+}
+
+.card {
+  background-color: var(--color-dark-blue);
+  border-radius: 10px;
+}
+
+.data__storage__hero {
+  padding: 2.5rem;
+  margin-bottom: 1rem;
+  border-top-right-radius: 6rem;
+}
+
+.storage__icons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.storage__icons li {
+  display: flex;
+}
+
+.storage__icon {
+  display: grid;
+  place-items: center;
+  padding: 15px;
+  background-color: var(--color-very-dark-blue);
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.data__storage__info {
+  position: relative;
+  padding: 2rem 2.5rem;
+}
+
+.storage__warning {
+  color: var(--color-pale-blue);
+  font-size: var(--fs-milli);
+  text-align: center;
+}
+
+.storage__warning span {
+  font-weight: var(--fw-700);
+}
+
+.progress__container {
+  margin-top: 1rem;
+  width: 100%;
+  background: hsla(229, 57%, 11%, 0.4);
+  height: 20px;
+  border-radius: 25px;
+  padding: 3px;
+}
+
+.progress__bar {
+  height: 100%;
+  width: 75%;
+  background: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1px;
+}
+
+.progress__circle {
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-pale-blue);
+  border-radius: 100%;
+}
+.storage__threashold {
+  margin: 0.5rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-pale-blue);
+  font-size: var(--fs-milli);
+  font-weight: var(--fw-700);
+}
+.msg__container {
+  position: absolute;
+  left: 50%;
+  bottom: -35%;
+  transform: translate(-50%, -35%);
+  white-space-collapse: discard;
+}
+.msg {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 180px;
+  height: 70px;
+  border-radius: 5px;
+}
+.msg p:nth-child(1) {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-700);
+}
+.msg p:nth-child(2) {
+  font-size: var(--fs-milli);
+  color: var(--color-grayish-blue);
+  font-weight: var(--fw-700);
+}
+
+@media screen and (min-width: 1024px) {
+  
+  body {
+    background: var(--color-very-dark-blue) url(./images/bg-desktop.png);
+    background-position: bottom center;
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+  }
+  .container {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+  }
+
+  .data__storage__hero {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  .data__storage__info {
+    flex: 2;
+    margin-top: 0;
+    padding: 2rem;
+  }
+
+  .storage__warning {
+    text-align: justify;
+  }
+
+  .msg__container {
+    bottom: unset;
+    left: unset;
+    top: -60px;
+    right: 8%;
+    transform: translate(0, 0);
+  }
+
+  .msg{
+    border-bottom-right-radius: 0;
+  }
+
+  .msg::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 70px;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid white;
+    border-top: 10px solid white;
+  }
+}
 
 /* footer */
 .attribution {
+  color: var(--color-grayish-blue);
   font-size: 11px;
   text-align: center;
+  position: absolute;
+  bottom: 5px;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--color-pale-blue);
 }

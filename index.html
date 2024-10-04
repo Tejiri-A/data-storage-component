@@ -1,31 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Fylo data storage component</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <header class="card data__storage__hero">
+          <img
+            src="./images/logo.svg"
+            class="storage__logo"
+            alt="Company logo"
+          />
+          <nav aria-label="Quick actions">
+            <ul class="storage__icons">
+              <li>
+                <button class="storage__icon" aria-label="Open document">
+                  <img src="./images/icon-document.svg" alt="" />
+                </button>
+              </li>
+              <li>
+                <button class="storage__icon" aria-label="Open folder">
+                  <img src="./images/icon-folder.svg" alt="" />
+                </button>
+              </li>
+              <li>
+                <button class="storage__icon" aria-label="Upload file">
+                  <img src="./images/icon-upload.svg" alt="" />
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <section
+          class="card data__storage__info"
+          aria-labelledby="storage-info-heading"
+        >
+          <p class="storage__warning">
+            You've used <span aria-label="815 gigabytes">815 GB</span> of your
+            storage
+          </p>
+          <div
+            class="progress__container"
+            role="progressbar"
+            aria-valuenow="81.5"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-label="Storage usage"
+          >
+            <div class="progress__bar">
+              <div class="progress__circle"></div>
+            </div>
+          </div>
+          <div class="storage__threashold">
+            <p>
+              <span aria-hidden="true">0 GB</span>
+            </p>
+            <p>
+              <span aria-hidden="true">1000 GB</span>
+            </p>
+          </div>
+          <div class="msg__container">
+            <div class="msg">
+              <p><span aria-label="185 gigabytes">185</span></p>
+              <p>
+                <span aria-hidden="true">GB Left</span>
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Fylo data storage component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  You’ve used 815 GB of your storage
-
-  185 GB Left
-  
-  0 GB
-  1000 GB
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://www.frontendmentor.io/profile/Tejiri-A" target="_blank">Oghenetejiri Samuel Amrasa</a>.
+    </footer>
+  </body>
 </html>
